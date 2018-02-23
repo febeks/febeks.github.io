@@ -1,3 +1,4 @@
 name: Febeks
 markdown: kramdown
+baseurl: /febeks.github.io
 permalink: /blog/:year/:month/:day/:title
