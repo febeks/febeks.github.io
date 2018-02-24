@@ -6,8 +6,10 @@ layout: default
 
 <div class="post">
   {{ content }}
+
+  <span>Počet slov: {{ page.content | number_of_words }}</span>
 </div>
 
-<div class="back">
-  <a href="{{site.baseurl}}/blog">Späť na Blog</a>
+<div class="row back">
+    <a href="{{site.baseurl}}/blog">Späť na Blog</a>
 </div>

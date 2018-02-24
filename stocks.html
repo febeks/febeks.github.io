@@ -19,8 +19,7 @@ layout: default
 <p>
   Keď som spomenul skúsenosti, určite by bolo zaujímavé spomenúť <strong>5 najlepších / najziskovejších forexových obchodníkov na svete</strong>:
 </p>
-
-<div class="col-lg-12">
+<div class="row">
   <div class="col-lg-6">
     <ul>
     {% for trader in site.data.traders %}
@@ -43,8 +42,7 @@ layout: default
     </ul>
   </div>
 </div>
-</div>
-
+<div class="row">
   <div class="col-lg-6">
     {% include chart.html %}
   </div>
@@ -52,3 +50,4 @@ layout: default
   <div class="col-lg-6">
     {% include crypto.html %}
   </div>
+</div>
