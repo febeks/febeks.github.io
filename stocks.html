@@ -3,28 +3,29 @@ layout: default
 ---
 
 <div class="col-lg-12">
-  <!-- TradingView Widget BEGIN -->
-<div class="tradingview-widget-container">
-  <div class="tradingview-widget-container__widget"></div>
-  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/cryptocurrencies/quotes-all/" rel="noopener" target="_blank"><span class="blue-text">Cryptocurrency Markets</span> by TradingView</a></div>
-  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async>
-  {
-  "width": "100%",
-  "height": "100%",
-  "defaultColumn": "overview",
-  "screener_type": "crypto_mkt",
-  "displayCurrency": "USD",
-  "locale": "en"
-}
-  </script>
+  {% include ticker.html %}
 </div>
-<!-- TradingView Widget END -->
-</div>
-
+<br />
 <h3 class="text-center">{{ ' "Holding a Winner Means Fighting Human Behavior" '| smartify }}</h3>
 <p>
-  Počas vysokoškolského štúdia som sa venujem obchodovaniu na burze. Zaujímam sa hlavne o majoritné forexové páry a cenné kovy.
+  Počas vysokoškolského štúdia som sa venujem obchodovaniu na burze.
+  Zaujímam sa hlavne o majoritné forexové páry, cenné kovy, akciové indexy a okrajovo sledujem aj vývoj kryptomien.
+  Na tejto stránke nájdete prehľad rôznych <i>widgetov</i>, ktoré zobrazujú tie najdôležitejšie páry, indexy a komodity na burze.
+  Nižšie som pridal pár kníh, ktoré odporúčam prečítať hlavne vďaka ich dobrému spracovaniu a veľmi bohatému obsahu, ktorý je založený na skúsenostiach.
 </p>
+<p>
+  Keď som spomenul skúsenosti, určite by bolo zaujímavé spomenúť <strong>5 najlepších / najziskovejších forexových obchodníkov na svete</strong>:
+</p>
+
+<ul>
+{% for trader in site.data.traders %}
+  <li><strong>Meno a priezvisko: </strong>{{trader.meno}} {{trader.priezvisko}}<br />
+  <strong>Rok narodenia: </strong>{{trader.narodeny}}<br />
+  <strong>Majetok: </strong>{{trader.majetok}}</li>
+  <br />
+{% endfor %}
+</ul>
+
 <strong><h3>Odporúčaná literatúra</h3></strong>
 <ul>
 {% for book in site.data.books %}
@@ -34,3 +35,12 @@ layout: default
   <br />
 {% endfor %}
 </ul>
+
+
+<div class="col-lg-10">
+  {% include chart.html %}
+</div>
+
+<div class="col-lg-10">
+  {% include crypto.html %}
+</div>
