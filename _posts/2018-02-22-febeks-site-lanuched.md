@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "Febeks, Money Lanunderer, Launches Site"
+title: "Osobné portfólio vytvorené."
 date: 2018-02-22
 ---
 
-Website launched. https://dollarsandsense.sg/wp-content/uploads/2016/12/money-laundering.jpg
+<p>Dnes na cvičení z Webového publikovania som úspešne nainštaloval všetko potrebné na vytvorenie osobného portfólia,
+ktoré bude hostované na serveroch githubu.</p>

@@ -2,7 +2,34 @@
 layout: default
 title: Febeks
 ---
-<div class="blurb">
-	<h1>Hi there, I'm Febeks!</h1>
-	<p>I love FIIT STU.</p>
-</div><!-- /.blurb -->
+<div class="container">
+	<div class="row col-md-11">
+		<div class="col-md-4">
+			<img id="avatar" src="img\golden.jpg" alt="" />
+		</div>
+
+		<div class="col-md-8">
+			<h3>Vitajte na mojej osobnej stránke.</h3>
+			<p>Som študent 4. ročníka bakalárskeho štúdia na <a href="http://www.fiit.stuba.sk" target="_blank">FIIT STU</a> v Bratislave. Pochádzam z malej dedinky pod Tatrami s názvom Slovenská Ves.
+			Súčasne sa ale zdržiavam na internáte Mladosť v Mlynskej Doline v Bratislave, keďže študujem dennou formou.</p>
+			<p>V tomto online portfóliu nájdete moje projekty v rámci predmetu <a href="https://wiki.fiit.stuba.sk/study/bc/info/wp/2017-18/" target="_blank">Webové Publikovanie</a> (WP)
+				ale aj rôzne iné informácie o mojich aktivitách či už v odbore informatiky, obchodovania na burze alebo iným záľubám, ktorým sa aktívne venujem.</p>
+		</div>
+	</div>
+
+	<div id="aktuality" class="col-md-11">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				Aktuality
+			</div>
+			<div class="panel-body">
+				{% for post in site.posts %}
+			    <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+			  {% endfor %}
+			</div>
+			<div class="panel-footer">
+				<a href="{{site.baseurl}}/blog">Zobraziť všetky</a>
+			</div>
+		</div>
+	</div>
+</div><!-- end of container-->
