@@ -17,30 +17,35 @@ layout: default
   Keď som spomenul skúsenosti, určite by bolo zaujímavé spomenúť <strong>5 najlepších / najziskovejších forexových obchodníkov na svete</strong>:
 </p>
 
-<ul>
-{% for trader in site.data.traders %}
-  <li><strong>Meno a priezvisko: </strong>{{trader.meno}} {{trader.priezvisko}}<br />
-  <strong>Rok narodenia: </strong>{{trader.narodeny}}<br />
-  <strong>Majetok: </strong>{{trader.majetok}}</li>
-  <br />
-{% endfor %}
-</ul>
-
-<strong><h3>Odporúčaná literatúra</h3></strong>
-<ul>
-{% for book in site.data.books %}
-  <li><strong>Názov: </strong>{{book.nadpis}}<br />
-  <strong>Autor: </strong>{{book.autor}}<br />
-  <strong>Odkaz: </strong><a href="{{ book.link }}">{{ book.link }}</a></li>
-  <br />
-{% endfor %}
-</ul>
-
-
-<div class="col-lg-10">
-  {% include chart.html %}
+<div class="col-lg-12">
+  <div class="col-lg-6">
+    <ul>
+    {% for trader in site.data.traders %}
+      <li><strong>Meno a priezvisko: </strong>{{trader.meno}} {{trader.priezvisko}}<br />
+      <strong>Rok narodenia: </strong>{{trader.narodeny}}<br />
+      <strong>Majetok: </strong>{{trader.majetok}}</li>
+      <br />
+    {% endfor %}
+    </ul>
+  </div>
+  <div class="col-lg-6">
+    <strong><h3>Odporúčaná literatúra</h3></strong>
+    <ul>
+    {% for book in site.data.books %}
+      <li><strong>Názov: </strong>{{book.nadpis}}<br />
+      <strong>Autor: </strong>{{book.autor}}<br />
+      <strong>Odkaz: </strong><a href="{{ book.link }}">{{ book.link }}</a></li>
+      <br />
+    {% endfor %}
+    </ul>
+  </div>
+</div>
 </div>
 
-<div class="col-lg-10">
-  {% include crypto.html %}
-</div>
+  <div class="col-lg-6">
+    {% include chart.html %}
+  </div>
+
+  <div class="col-lg-6">
+    {% include crypto.html %}
+  </div>
