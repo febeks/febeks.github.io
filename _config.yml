@@ -2,3 +2,5 @@ name: Febeks
 markdown: kramdown
 baseurl: /febeks.github.io
 permalink: /blog/:year/:month/:day/:title
+paginate_path: "/gallery/page:num/"
+paginate: 7

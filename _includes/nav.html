@@ -2,10 +2,17 @@
   <div class="container-fluid">
     <ul class="nav navbar-nav">
       <li><a href="{{site.baseurl}}/">O mne</a></li>
-      <li><a href="{{site.baseurl}}/dev/index.html">Developerský profil</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="{{site.baseurl}}/dev/index.html">Webové publikovanie
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="{{site.baseurl}}/dev/index.html#zadanie-1">Zadanie 1</a></li>
+          <li><a href="{{site.baseurl}}/dev/index.html#zadanie-2">Zadanie 2</a></li>
+          <li><a href="{{site.baseurl}}/dev/index.html#zadanie-3">Zadanie 3</a></li>
+        </ul>
       <li><a href="{{site.baseurl}}/stocks.html">Burza</a></li>
       <li><a href="{{site.baseurl}}/hobby.html">Hobby</a></li>
-      <li><a href="{{site.baseurl}}/galeria.html">Fotogaléria</a></li>
+      <li><a href="{{site.baseurl}}/gallery/index.html">Fotogaléria</a></li>
     </ul>
   </div>
 </nav>
