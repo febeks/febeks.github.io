@@ -2,16 +2,42 @@
 layout: default
 title: Developerský profil
 ---
-<div class="container">
-	<div class="row col-lg-11">
-    <ul class="nav nav-pills">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Menu 1</a></li>
-      <li><a href="#">Menu 2</a></li>
-      <li><a href="#">Menu 3</a></li>
-    </ul>
 
+<div id="exTab2" class="container">
+  <div class="col-lg-11">
+    <ul class="nav nav-tabs">
+    			<li class="active">
+            <a  href="#1" data-toggle="tab">Profil developera</a>
+    			</li>
+    			<li><a href="#2" data-toggle="tab">Webové publikovanie</a>
+    			</li>
+    		</ul>
 
-
-	</div>
-</div><!-- end of container-->
+    			<div class="tab-content ">
+    			  <div class="tab-pane active" id="1">
+              <h3>bla bla</h3>
+    				</div>
+    				<div class="tab-pane" id="2">
+                  <ul class="nav nav-pills nav-stacked col-sm-2 col-md-2">
+                    <li class="active"><a href="#tab_a" data-toggle="pill">Zadanie 1</a></li>
+                    <li class=""><a href="#tab_b" data-toggle="pill">Zadanie 2</a></li>
+                    <li class=""><a href="#tab_c" data-toggle="pill">Zadanie 3</a></li>
+                  </ul>
+                  <div class="tab-content col-sm-10 col-md-10">
+                        <div class="tab-pane active" id="tab_a">
+                          <br />
+                          {% include wp/zadanie1.html %}
+                        </div>
+                        <div class="tab-pane" id="tab_b">
+                          <br />
+                          {% include wp/zadanie2.html %}
+                        </div>
+                        <div class="tab-pane" id="tab_c">
+                          <br />
+                          {% include wp/zadanie3.html %}
+                        </div>
+                  </div><!-- tab content -->
+    				</div>
+    			</div>
+  </div>
+</div>
