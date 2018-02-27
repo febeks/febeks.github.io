@@ -73,3 +73,22 @@ Video [TU](https://youtu.be/8oBk6zSkOBI?t=485).
 - TV system: PAL / NTSC
 - 5D-OSD button: yes
 - Input voltage: 12V DC
+
+<img style="float: left;" src="img\taranis.jpg"/>
+<br /><br /><br /><br /><br />
+### Ovládač
+Nevyhnutnou súčasťou výbavy je kvalitný ovládač. Ja som sa rozhodol pre __Taranis X Q7__, 16 kanálový ovládač s rôznymi funkciami, z ktorých niektoré ani nikdy nevyužijem.
+<br /><br /><br /><br /><br /><br />
+
+<img style="float: right;" src="img\fpv.jpg"/>
+<br /><br />
+### FPV Okuliare
+Po pár testovacích letoch bez FPV okuliarí som zhodnotil, že to bez nich nejde a je to veľmi náročné ovládať, tak som sa rozhodol kúpiť si ich.
+Oslovila ma značka __AOMWAY__, konkrétne *Aomway Commanders V2*, na fotografii vpravo.
+<br /><br /><br /><br /><br />
+
+<img style="float: left;" src="img\runcam1.jpg"/>
+<br /><br /><br /><br /><br />
+### UPDATE FPV kamery
+Pôvodná FPV kamera bola 2.5 mm a potreboval som mať trošku širší výhľad, tak som ju nahradil __Runcam Swift 2__, ktorá má šošovku 2.1mm, čiže mierne zlepšenie vo veľkosti obrazu ale určite aj v kvalite videa.
+<br /><br /><br /><br /><br />
