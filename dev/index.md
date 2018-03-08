@@ -12,6 +12,7 @@ V headeri sa nachádza aj navigácia, ktorá tam je vložená pomocou `{ % inclu
 2. Content je taktiež definovaný premennou `page.content` a nachádza sa v časti `<body></body>`.
 3. Footer tvorí tiež includovaný súbor a to `{ % include footer.html % }`.
 
+
 * Jednotlivé stránky majú __layout obsahu__ vytvorený individuálne a to v závislosti od konkrétneho obsahu. Všeobecne sú vytvorené layouty pre všetky stránky, layout `default.html`, pre blog `post.html` a pre galériu `gallery.html`.
   * __O mne__ obsahuje fotku autora webstránky + krátky úvod s informáciami pre návštevníka.
   Nižšiu časť tejto stránky tvoria __Aktuality__, kde sa nachádzajú najnovšie príspevky z blogu.
@@ -34,7 +35,7 @@ Technická analýza na akciových menových a komoditních trzích,Jitka Veselá
 * __kolekcie / dátové súbory:__
   * `data files 2x`
 * __1 plugin:__
-  *
+  * `emoji_for_jekyll`
 <br />
 
 #### Použité štýly
