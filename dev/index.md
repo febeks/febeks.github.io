@@ -44,7 +44,110 @@ Súbory sa nachádzajú v zložke `css/`. Keďže dnes už existujú rôzne kni�
 nalinkované potrebné súbory pre __bootstrap__, ktorý tvorí podstatnú časť štýlovania.
 
 ### Zadanie 2
-  **Netrpezlivo čakám na jeho zverejnenie.**
+  **Prečítať si** [Znenie zadania](https://wiki.fiit.stuba.sk/study/bc/info/wp/2017-18/zadanie2/)
+
+#### Použité elementy a atribúty
+* __štandardné členenie textu na kapitola, podkapitola, podpodkapitola, príloha, generovaný obsah:__
+  * Obsah sa generuje automaticky (štandard Docbook nastavení), ak to nie je "overridnuté" v konfiguračnom súbore
+
+    {% highlight html %}
+    <chapter>
+      <title>Nazov kapitoly</title>
+      <para> Text odstavca ... </para>
+      <section>
+        <title>Nadpis podkapitoly</title>
+        <para> Text podkapitoly </para>
+          <section>
+            <title>Nadpis podpodkapitoly</title>
+            <para> Text podpodkapitoly </para>
+          </section>
+        </section>
+      </chapter>{% endhighlight %}
+      {% highlight html %}
+        <appendix>
+          <title>Prílohy</title>
+          <para>
+            CD médium, na ktorom sa nachádzajú všetky súbory potrebné na spustenie projektu na počítači.
+            </para>
+        </appendix>{% endhighlight %}
+
+* __zvýraznenie slov, zvýraznenie členenia textu odrážkami alebo číslovaním:__
+  * zvýraznenie slov `<emphasis>kurziva</emphasis>` alebo `<emphasis role="strong">tucne pismo</emphasis>`
+  * členenie textu odrážkami
+  * členenie textu číslovaním
+  * custom nastavenie pre pridanie prázdneho riadku pomocou `<?linebreak?>`, tento príkaz je manuálne definovaný nasledovne:
+    {% highlight html %}
+    <xsl:template match="processing-instruction('linebreak')">
+      <fo:block><fo:leader/></fo:block>
+    </xsl:template>{% endhighlight %}
+
+
+  {% highlight html %}
+  <itemizedlist mark='bullet'>
+      <listitem>
+        <para>INIT - vytvorí Z-spojenie</para>
+      </listitem>
+      <listitem>
+        <para>SEARCH - umožní klientovi vykonávať dopyty</para>
+      </listitem>
+      <listitem>
+        <para>PRESENT - klient požiada server o výsledky hľadania</para>
+      </listitem>
+    </itemizedlist>
+
+    <orderedlist numeration="arabic">
+      <listitem>
+        <para>Formát pre autority</para>
+      </listitem>
+      <listitem>
+        <para>Bibliografický formát</para>
+      </listitem>
+      <listitem>
+        <para>Formát pre klasifikačné záznamy</para>
+      </listitem>
+      <listitem>
+        <para>Formát pre komunitné informácie</para>
+      </listitem>
+      <listitem>
+        <para>Formát pre holdingové záznamy</para>
+      </listitem>
+    </orderedlist>{% endhighlight %}
+* __odkazy na iné časti vlastného dokumentu, prípadne odkazy na URL:__
+  * `<link endlink="id_odkazovanej_casti">text odkazu</link>` alebo `<ulink url="http://www.infolib.sk/sk/informacie/verejne-kniznice/zakladne-udaje/"></ulink>`
+* __poznámka pod čiarou:__
+  * `<footnote><para>Pripojiť sa na tieto databázy je možné prostredníctvom Z-klienta, čiže spojenia podľa <emphasis>protokolu Z39.50</emphasis>.</para></footnote>`
+* __zoznam použitej literatúry a zdrojov vrátane ich citácie v texte:__
+  * Na označenie citácie je použité číslo na konci vety `<citation>8</citation>` ktoré je týmto kódom ohraničené `[8]`
+  * Vytvorenie bibliografie na konci dokumentu
+    {% highlight html %}
+      <bibliography>
+        <title>Použitá literatúra</title>
+
+        <bibliomixed><abbrev>1</abbrev> InfoLib.sk.: <title>Knižničný systém v Slovenskej republike</title>.
+        <bibliomisc>Získané z WWW: <ulink url="http://www.infolib.sk/sk/informacie/verejne-kniznice/zakladne-udaje/"></ulink></bibliomisc></bibliomixed>
+      </bibliography>{% endhighlight %}
+* __vloženie obrázku a tabuliek, odkazy na ne v texte; zoznam obrázkov a tabuliek v úvode alebo závere textu:__
+  * Zoznam obrázkov a tabuliek je na začiatku a je generovaný automaticky ako obsah ak to nie je definované inak. Je to štandard pre typ `book`. Vytvorenie tabuľky je podobné
+    ako v html, pridanie obrázku je iné:
+  {% highlight html %}
+  <figure id="vlcata">
+        <title>Náhľad portálu Vĺčatá.sk – hlavná stránka.</title>
+        <mediaobject>
+          <imageobject condition="web">
+            <imagedata fileref="img/vlcata.png" format="PNG" scale="37"/>
+          </imageobject>
+          <imageobject condition="print">
+            <imagedata fileref="img/vlcata.pdf" format="PDF"/>
+          </imageobject>
+          <textobject>
+            <phrase>Náhľad portálu Vĺčatá.sk – hlavná stránka.</phrase>
+          </textobject>
+        </mediaobject>
+      </figure>{% endhighlight %}
+
+* __vytvorenie registra pojmov (indexu) s pojmami hierarchicky usporiadanými do dvoch úrovni:__
+  * Pridanie indexu je namáhavé pretože treba manuálne označovať jednotlivé indexy v texte diela a to napríklad takto: `<indexterm><primary>štandardy</primary><secondary>Z39.50</secondary></indexterm>`.
+  * Následne je len potrebné zavolať `<index/>` niekde v dokumente, kde chceme aby sa zobrazil zoznam indexov so stranou ich výskytu.
 
 ### Zadanie 3
-  **Platí to isté ako pre zadanie 2.**
+  **Not published yet.**
