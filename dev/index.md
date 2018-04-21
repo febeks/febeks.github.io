@@ -150,4 +150,49 @@ nalinkované potrebné súbory pre __bootstrap__, ktorý tvorí podstatnú čas�
   * Následne je len potrebné zavolať `<index/>` niekde v dokumente, kde chceme aby sa zobrazil zoznam indexov so stranou ich výskytu.
 
 ### Zadanie 3
-  **Not published yet.**
+  **Prečítať si** [Znenie zadania](https://wiki.fiit.stuba.sk/study/bc/info/wp/2017-18/zadanie3/)
+* Opis typu dokumentu + opis účelu navrhnutých elementov
+  * __V súbore ppt.dtd sa nachádza DTD:__
+    * Ukážka:
+    {% highlight DTD %}
+<!-- root, kazda ppt ma najmenej 1 slajd -->
+<!ELEMENT ppt (slide*)>
+<!-- kazdy slide ma nadpis, ostatne su volitelne, left a right su na vytvorenie dvoch stlpcov v slajde (napr obrazok napravo a text nalavo -->
+<!ELEMENT slide (title, ((univ?, fac?, auth*)* | (text* | list* | p* | image*) | (left? , right?)*)*)>
+<!ATTLIST slide type (title|full_screen|split_screen|ref) #REQUIRED>
+<!-- pozadie slajdu moze byt grey alebo white -->
+<!ATTLIST slide color (grey|white) #IMPLIED>
+<!-- nadpis -->
+<!ELEMENT title (#PCDATA)>
+{% endhighlight %}
+
+* Vytvorenie ukážkovej XML prezentácie demonštrujúcej možnosti definície typu dokumentu
+  * Prezentácia vo forme XML sa nachádza v súbore ppt.xml kde sú použité / demonštrované možnosti DTD
+    * Prezentácia má základnú štruktúru, ktorú definuje `<slide></slide>` ktorý vytvára jeden samostatný slajd.
+      V slajde sa nachádzajú všetky možné vnorené elementy ako to povoľuje DTD. Môže to byť napríklad obyčajný `text`, `p`, `image`, `list`, `title` a podobne.
+      Prezentácia má 2 typy slajdov, a to preto aby bolo možné zobraziť text alebo obrázky aj vedľa seba. Jeden typ je `full_screen`, ktorý využíva plnú veľkosť/rozmery slajdu,
+      druhý typ je `split_screen`, ktorý rozdeľuje priestor slajdu na 50%.
+* Základný návrh XSL transformácií, ich vhodnosť, parametrizácia
+  * V súbore general.xsl sa nachádzajú XLS transformácie, ktoré sú všeobecne použiteľné a je možné nastaviť parametre podľa potreby, ktoré saa aplikujú všade, kde sa využívajú.
+  {% highlight xsl %}
+  <xsl:variable name="p-size" select="'20'" ></xsl:variable>
+  <xsl:variable name="list-item-size" select="'22'" ></xsl:variable>
+  <xsl:variable name="ref-size" select="'22'" ></xsl:variable>
+  <xsl:variable name="title-size" select="'36'" ></xsl:variable>{% endhighlight %}
+* XSLT pre konverziu prezentácie z XML -> XHTML+CSS
+  * Nachádza sa v súbore `html.xsl` a `css` sa nachádza v `ppt.css`.
+  * Podobne ako tento `template` pre slide, sú tvorené aj ostatné, ktoré nadväzujú na štruktúru `ppt.xml` a `DTD`. Atribút `match` požaduje parameter, ktorý určuje, o aký typ slajdu sa jedná.
+V tomto prípade je to `full_screen`. Nasleduje obsah tohto slajdu, ktorý určujú ďalšie elementy ako `title` alebo už samotný obsah.
+  * Keďže každý slajd je v samostatnom súbore, bolo potrebné využiť `fontawesome` a pridať šípky pod slajd, ktoré vytvárajú navigáciu medzi slajdami.
+
+    Ukážka štruktúry tohto súboru:
+    {% highlight xsl %}
+<xsl:template match="slide[@type='full_screen']">
+<div style="text-align:left;">
+	<xsl:call-template name="title"/>
+	<xsl:apply-templates/>
+</div>
+</xsl:template>{% endhighlight %}
+
+* XSLT pre konverziu prezentácie XML -> PDF
+  * Podobne ako XSLT pre HTML, aj pre PDF platia rovnaké podmienky ohľadom dodržiavania štruktúry `ppt.xml`.
