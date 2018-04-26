@@ -183,7 +183,7 @@ nalinkované potrebné súbory pre __bootstrap__, ktorý tvorí podstatnú čas�
   * Nachádza sa v súbore `html.xsl` a `css` sa nachádza v `ppt.css`.
   * Podobne ako tento `template` pre slide, sú tvorené aj ostatné, ktoré nadväzujú na štruktúru `ppt.xml` a `DTD`. Atribút `match` požaduje parameter, ktorý určuje, o aký typ slajdu sa jedná.
 V tomto prípade je to `full_screen`. Nasleduje obsah tohto slajdu, ktorý určujú ďalšie elementy ako `title` alebo už samotný obsah.
-  * Keďže každý slajd je v samostatnom súbore, bolo potrebné využiť `fontawesome` a pridať šípky pod slajd, ktoré vytvárajú navigáciu medzi slajdami.
+  * Keďže každý slajd je v samostatnom súbore, bolo potrebné využiť nejakú navigáciu. Zvolil som ikony (šípky) z externáho zdroja `fontawesome` a pridal som ich vedľa slajdov (šípka vľavo hore = predchádzajúci slajd, šípka vpravo dole = nasledujúci slajd).
 
     Ukážka štruktúry tohto súboru:
     {% highlight xsl %}
