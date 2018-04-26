@@ -180,7 +180,7 @@ nalinkované potrebné súbory pre __bootstrap__, ktorý tvorí podstatnú čas�
   <xsl:variable name="ref-size" select="'22'" ></xsl:variable>
   <xsl:variable name="title-size" select="'36'" ></xsl:variable>{% endhighlight %}
 * XSLT pre konverziu prezentácie z XML -> XHTML+CSS
-  * Nachádza sa v súbore `html.xsl` a `css` sa nachádza v `ppt.css`.
+  * Nachádza sa v súbore `html.xsl` a `css` sa nachádza v `ppt.css`. V súbore `ppt.css` sa nachádzajú štyly, ktoré ladia html prezentáciu po vizuálnej stránke. Definujú medzery, veľkosti textu a podobne.
   * Podobne ako tento `template` pre slide, sú tvorené aj ostatné, ktoré nadväzujú na štruktúru `ppt.xml` a `DTD`. Atribút `match` požaduje parameter, ktorý určuje, o aký typ slajdu sa jedná.
 V tomto prípade je to `full_screen`. Nasleduje obsah tohto slajdu, ktorý určujú ďalšie elementy ako `title` alebo už samotný obsah.
   * Keďže každý slajd je v samostatnom súbore, bolo potrebné využiť nejakú navigáciu. Zvolil som ikony (šípky) z externáho zdroja `fontawesome` a pridal som ich vedľa slajdov (šípka vľavo = predchádzajúci slajd, šípka vpravo = nasledujúci slajd).
@@ -188,7 +188,7 @@ V tomto prípade je to `full_screen`. Nasleduje obsah tohto slajdu, ktorý urču
     Ukážka štruktúry tohto súboru:
     {% highlight xsl %}
 <xsl:template match="slide[@type='full_screen']">
-<div style="text-align:left;">
+<div>
 	<xsl:call-template name="title"/>
 	<xsl:apply-templates/>
 </div>
